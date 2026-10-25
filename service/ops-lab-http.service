@@ -1,0 +1,16 @@
+# Reconstructed from terminal evidence. Paths and username are lab-specific.
+# Example only: do not install over an existing unit without checking first.
+[Unit]
+Description=Local HTTP Service Operations Lab
+After=network.target
+
+[Service]
+Type=simple
+User=rafi
+WorkingDirectory=/home/rafi/server-ops-lab
+ExecStart=/usr/bin/python3 -u -m http.server 8765 --bind 127.0.0.1 --directory /home/rafi/server-ops-lab/www
+Restart=no
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

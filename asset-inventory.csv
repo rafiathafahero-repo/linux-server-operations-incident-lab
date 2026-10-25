@@ -1,0 +1,9 @@
+asset_id,category,identifier,observed_value,evidence_filename,scope,notes
+VM-001,Virtual machine,ubuntu-bootcamp,Ubuntu 26.04 LTS,01a-system-cpu-memory.png,virtual,Guest OS identified by hostnamectl
+VM-002,Kernel,ubuntu-bootcamp,7.0.0-38-generic,01a-system-cpu-memory.png,virtual,Kernel as shown at inventory time
+CPU-001,vCPU,ubuntu-bootcamp,2 virtual CPUs,01a-system-cpu-memory.png,virtual,Exposed CPU model: Intel Core i5-10210U
+MEM-001,Memory,ubuntu-bootcamp,5.3 GiB total; 4.1 GiB available,01a-system-cpu-memory.png,virtual,Point-in-time free -h output
+DSK-001,System disk,/dev/sda,30 GiB,01b-storage-filesystem.png,virtual,Root ext4 on /dev/sda2; 65% used at capture
+RAID-001,Software RAID1,/dev/md0,[2/2] [UU],02-environment-readiness.png,virtual,Members /dev/sdc and /dev/sdd; no physical drive handled
+SVC-001,HTTP service,ops-lab-http.service,127.0.0.1:8765,03b-systemd-service-active.png,local test service,"Python HTTP server, systemd; manual health checks"
+FS-001,Capacity test mount,/home/rafi/server-ops-lab/capacity-test,tmpfs; 16 MiB,12-capacity-tmpfs-baseline.png,temporary filesystem,82% in threshold test; 0% after cleanup
